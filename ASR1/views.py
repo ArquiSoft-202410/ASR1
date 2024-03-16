@@ -10,7 +10,7 @@ def index(request):
                 'nombres': form.cleaned_data['nombres'],
                 'apellidos': form.cleaned_data['apellidos'],
                 'ciudad': form.cleaned_data['ciudad'],
-                'numero': form.cleaned_data['numero'],
+                'numero': "57" + form.cleaned_data['numero'],
                 'email': form.cleaned_data['email']
             }
             sendRequest(formData)

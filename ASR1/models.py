@@ -6,4 +6,4 @@ class DatosPersonales(models.Model):
     #pais = models.CharField(max_length=15)
     ciudad = models.CharField(max_length=20)
     numero = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
+    email = models.EmailField()
