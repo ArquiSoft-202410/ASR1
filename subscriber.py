@@ -4,8 +4,8 @@ from sys import path
 from os import environ
 import django
 
-path.append('monitoring/settings.py')
-environ.setdefault('DJANGO_SETTINGS_MODULE', 'monitoring.settings')
+path.append('BancoAlpes/settings.py')
+environ.setdefault('DJANGO_SETTINGS_MODULE', 'BancoAlpes.settings')
 django.setup()
 
 def callback(ch, method, properties, body):
