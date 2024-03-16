@@ -5,6 +5,7 @@ from .logic.producer import sendRequest
 def index(request):
     if request.method == "POST":
         form = DatosPersonalesForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
             formData = {
                 'nombres': form.cleaned_data['nombres'],
