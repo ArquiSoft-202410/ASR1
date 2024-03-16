@@ -5,5 +5,5 @@ class DatosPersonales(models.Model):
     apellidos = models.CharField(max_length=30)
     pais = models.CharField(max_length=15)
     ciudad = models.CharField(max_length=20)
-    numero = models.IntegerField()
+    numero = models.CharField(max_length=10)
     email = models.EmailField()
