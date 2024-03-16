@@ -22,7 +22,7 @@ def callback(ch, method, properties, body):
     value = json.loads(body)
     value['codigo'] = randint(10000, 99999)
     print("Received %r" % value)
-    #send_sms(value)
+    send_sms(value)
 
 def send_sms(value):
     client = vonage.Client(key=settings.VONAGE_API_KEY, secret=settings.VONAGE_API_SECRET)
