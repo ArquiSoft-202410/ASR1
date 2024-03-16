@@ -15,12 +15,12 @@ def callback(ch, method, properties, body):
     value = json.loads(body)
     value['codigo'] = randint(100000, 999999)
     print("Received %r" % value)
-    send_sms(value)
+    #send_sms(value)
 
 def send_sms(value):
     client = vonage.Client(key=settings.VONAGE_API_KEY, secret=settings.VONAGE_API_SECRET)
     sms = vonage.Sms(client)
-    message = f"OTP: Hola, {value['nombre']}, para validar tu información ingresa el siguiente código: {value['codigo']}"
+    message = f"OTP: Hola, {value['nombre']}, para validar tu informacion ingresa el siguiente codigo: {value['codigo']}\n\n"
     recipient_number = "573202805733"
     response_data = sms.send_message({
         "from": "Vonage APIs",
