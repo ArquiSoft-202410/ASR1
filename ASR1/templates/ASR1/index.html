@@ -23,84 +23,86 @@
             </form>
         </div>
     </nav>
-    <h1>Formulario de Datos Personales</h1>
-    <form method="post" class="row g-3 needs-validation">
-        {% csrf_token %}
-        <div class="col-md-4">
-            <label for="id_nombres" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="id_nombres" name="nombres" required>
-            {% if form.nombres.errors %}
-              <div class="invalid-feedback">
-                {{ form.nombres.errors.as_text }}
-              </div>
-            {% endif %}
-          </div>
-          <div class="col-md-4">
-            <label for="id_apellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="id_apellidos" name="apellidos" required>
-            {% if form.apellidos.errors %}
-              <div class="invalid-feedback">
-                {{ form.apellidos.errors.as_text }}
-              </div>
-            {% endif %}
-          </div>
-          <div class="col-md-3">
-            <label for="id_pais" class="form-label">País</label>
-            <select class="form-select" id="id_pais" name="pais" required>
-              <option value="" disabled>Seleccione un país</option>
-              <option value="Colombia">Colombia</option>
-            </select>
-            {% if form.pais.errors %}
-              <div class="invalid-feedback">
-                {{ form.pais.errors.as_text }}
-              </div>
-            {% endif %}
-          </div>          
-          <div class="col-md-4">
-            <label for="id_ciudad" class="form-label">Ciudad</label>
-            <input type="text" class="form-control" id="id_ciudad" name="ciudad" required>
-            {% if form.ciudad.errors %}
-              <div class="invalid-feedback">
-                {{ form.ciudad.errors.as_text }}
-              </div>
-            {% endif %}
-          </div>
-          <div class="col-md-4">
-              <label for="id_numero" class="form-label">Número</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">+57</span>
-                <input type="text" class="form-control" id="id_numero" name="numero" aria-describedby="inputGroupPrepend" required>
-                {% if form.numero.errors %}
-                  <div class="invalid-feedback">
-                    {{ form.numero.errors.as_text }}
-                  </div>
+    <div class="row d-flex justify-content-center align-items-center mb-3">
+        <h1>Formulario de Datos Personales</h1>
+        <form method="post" class="row g-3 needs-validation">
+            {% csrf_token %}
+            <div class="col-md-4">
+                <label for="id_nombres" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="id_nombres" name="nombres" required>
+                {% if form.nombres.errors %}
+                <div class="invalid-feedback">
+                    {{ form.nombres.errors.as_text }}
+                </div>
                 {% endif %}
-              </div>
-          </div>
-          <div class="col-md-3">
-            <label for="id_email" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="id_email" name="email" required>
-            {% if form.email.errors %}
-              <div class="invalid-feedback">
-                {{ form.email.errors.as_text }}
-              </div>
-            {% endif %}
-          </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Aceptar términos y condiciones
-            </label>
-            <div class="invalid-feedback">
-              Debe aceptar términos y condiciones para continuar
             </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Solicitar TC</button>
-        </div>
-      </form>
+            <div class="col-md-4">
+                <label for="id_apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="id_apellidos" name="apellidos" required>
+                {% if form.apellidos.errors %}
+                <div class="invalid-feedback">
+                    {{ form.apellidos.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-3">
+                <label for="id_pais" class="form-label">País</label>
+                <select class="form-select" id="id_pais" name="pais" required>
+                <option value="" disabled>Seleccione un país</option>
+                <option value="Colombia">Colombia</option>
+                </select>
+                {% if form.pais.errors %}
+                <div class="invalid-feedback">
+                    {{ form.pais.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>          
+            <div class="col-md-4">
+                <label for="id_ciudad" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="id_ciudad" name="ciudad" required>
+                {% if form.ciudad.errors %}
+                <div class="invalid-feedback">
+                    {{ form.ciudad.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <label for="id_numero" class="form-label">Número</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">+57</span>
+                    <input type="text" class="form-control" id="id_numero" name="numero" aria-describedby="inputGroupPrepend" required>
+                    {% if form.numero.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.numero.errors.as_text }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="id_email" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="id_email" name="email" required>
+                {% if form.email.errors %}
+                <div class="invalid-feedback">
+                    {{ form.email.errors.as_text }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                Aceptar términos y condiciones
+                </label>
+                <div class="invalid-feedback">
+                Debe aceptar términos y condiciones para continuar
+                </div>
+            </div>
+            </div>
+            <div class="col-12">
+            <button class="btn btn-primary" type="submit">Solicitar TC</button>
+            </div>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
