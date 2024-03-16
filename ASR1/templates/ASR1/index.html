@@ -28,7 +28,7 @@
         {% csrf_token %}
         <div class="col-md-4">
             <label for="id_nombres" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="id_nombres" name="{{ form.nombres.name }}" value="{{ form.nombres.value|default_if_none:'' }}" required>
+            <input type="text" class="form-control" id="id_nombres" name="nombres" required>
             {% if form.nombres.errors %}
               <div class="invalid-feedback">
                 {{ form.nombres.errors.as_text }}
@@ -37,14 +37,14 @@
           </div>
           <div class="col-md-4">
             <label for="id_apellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="id_apellidos" name="{{ form.apellidos.name }}" value="{{ form.apellidos.value|default_if_none:'' }}" required>
+            <input type="text" class="form-control" id="id_apellidos" name="apellidos" required>
             {% if form.apellidos.errors %}
               <div class="invalid-feedback">
                 {{ form.apellidos.errors.as_text }}
               </div>
             {% endif %}
           </div>
-          <div class="col-md-3">
+          <!-- <div class="col-md-3">
             <label for="id_pais" class="form-label">País</label>
             <select class="form-select" id="id_pais" name="{{ form.pais.name }}" required>
               <option value="">Seleccione un país</option>
@@ -55,10 +55,10 @@
                 {{ form.pais.errors.as_text }}
               </div>
             {% endif %}
-          </div>          
+          </div>          --> 
           <div class="col-md-4">
             <label for="id_ciudad" class="form-label">Ciudad</label>
-            <input type="text" class="form-control" id="id_ciudad" name="{{ form.ciudad.name }}" value="{{ form.ciudad.value|default_if_none:'' }}" required>
+            <input type="text" class="form-control" id="id_ciudad" name="ciudad" required>
             {% if form.ciudad.errors %}
               <div class="invalid-feedback">
                 {{ form.ciudad.errors.as_text }}
@@ -69,7 +69,7 @@
               <label for="id_numero" class="form-label">Número</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">+57</span>
-                <input type="text" class="form-control" id="id_numero" name="{{ form.numero.name }}" value="{{ form.numero.value|default_if_none:'' }}" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="id_numero" name="numero" aria-describedby="inputGroupPrepend" required>
                 {% if form.numero.errors %}
                   <div class="invalid-feedback">
                     {{ form.numero.errors.as_text }}
@@ -79,7 +79,7 @@
           </div>
           <div class="col-md-3">
             <label for="id_email" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="id_email" name="{{ form.email.name }}" value="{{ form.email.value|default_if_none:'' }}" required>
+            <input type="text" class="form-control" id="id_email" name="email" required>
             {% if form.email.errors %}
               <div class="invalid-feedback">
                 {{ form.email.errors.as_text }}

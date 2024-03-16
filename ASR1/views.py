@@ -5,7 +5,6 @@ from .logic.producer import sendRequest
 def index(request):
     if request.method == "POST":
         form = DatosPersonalesForm(request.POST)
-        print(form.is_valid())
         if form.is_valid():
             formData = {
                 'nombres': form.cleaned_data['nombres'],
@@ -17,6 +16,8 @@ def index(request):
             }
             sendRequest(formData)
             return render(request, "ASR1/check.html")
+        else:
+            print(form.errors)
     else:
         form = DatosPersonalesForm()
     return render(request, "ASR1/index.html", {'form': form})
