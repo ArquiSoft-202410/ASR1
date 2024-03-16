@@ -7,9 +7,12 @@ def index(request):
         form = DatosPersonalesForm(request.POST)
         if form.is_valid():
             formData = {
-                'nombre': form.cleaned_data['nombre'],
-                'email': form.cleaned_data['email'],
-                'numero': form.cleaned_data['numero']
+                'nombres': form.cleaned_data['nombres'],
+                'apellidos': form.cleaned_data['apellidos'],
+                'pais': form.cleaned_data['pais'],
+                'ciudad': form.cleaned_data['ciudad'],
+                'numero': form.cleaned_data['numero'],
+                'email': form.cleaned_data['email']
             }
             sendRequest(formData)
             return render(request, "ASR1/check.html")
