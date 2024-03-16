@@ -44,18 +44,18 @@
               </div>
             {% endif %}
           </div>
-          <!-- <div class="col-md-3">
+          <div class="col-md-3">
             <label for="id_pais" class="form-label">País</label>
             <select class="form-select" id="id_pais" name="{{ form.pais.name }}" required>
-              <option value="">Seleccione un país</option>
-              <option value="Colombia" {% if form.pais.value == "Colombia" %}selected{% endif %}>Colombia</option>
+              <option value="" disabled>Seleccione un país</option>
+              <option value="Colombia">Colombia</option>
             </select>
             {% if form.pais.errors %}
               <div class="invalid-feedback">
                 {{ form.pais.errors.as_text }}
               </div>
             {% endif %}
-          </div>          --> 
+          </div>          
           <div class="col-md-4">
             <label for="id_ciudad" class="form-label">Ciudad</label>
             <input type="text" class="form-control" id="id_ciudad" name="ciudad" required>
