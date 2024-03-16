@@ -9,7 +9,6 @@ def index(request):
             formData = {
                 'nombres': form.cleaned_data['nombres'],
                 'apellidos': form.cleaned_data['apellidos'],
-                'pais': form.cleaned_data['pais'],
                 'ciudad': form.cleaned_data['ciudad'],
                 'numero': form.cleaned_data['numero'],
                 'email': form.cleaned_data['email']
