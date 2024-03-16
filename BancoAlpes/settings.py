@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-iv@^^7+_kf&0l#(o^n$3#82@rgd1#*4la4i#pf3hbodn5d$efj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'BancoAlpes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'monitoring_db',
+        'USER': 'monitoring_user',
+        'PASSWORD': 'isis2503',
+        'HOST': '10.63.224.3',
+        'PORT': '',
     }
 }
 
