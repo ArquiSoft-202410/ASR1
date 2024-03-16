@@ -128,3 +128,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+VONAGE_API_KEY = 'd88431c3'
+VONAGE_API_SECRET = 'zupVMm5EOR2SpYmY'
