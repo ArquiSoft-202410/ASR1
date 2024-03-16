@@ -31,17 +31,11 @@
         {% csrf_token %}
         <div class="col-md-4">
             <label for="id_nombres" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="id_nombres" name="nombres" required>
-            <div class="invalid-feedback">
-                Proveer un nombre válido
-            </div>    
+            <input type="text" class="form-control" id="id_nombres" name="nombres" required>   
           </div>
           <div class="col-md-4">
             <label for="id_apellidos" class="form-label">Apellidos</label>
             <input type="text" class="form-control" id="id_apellidos" name="apellidos" required>
-            <div class="invalid-feedback">
-                Proveer un apellido válido
-            </div>
           </div>
           <div class="col-md-3">
             <label for="id_pais" class="form-label">País</label>
@@ -53,26 +47,17 @@
           <div class="col-md-4">
             <label for="id_ciudad" class="form-label">Ciudad</label>
             <input type="text" class="form-control" id="id_ciudad" name="ciudad" required>
-            <div class="invalid-feedback">
-                Proveer una ciudad válida
-            </div>
           </div>
           <div class="col-md-4">
               <label for="id_numero" class="form-label">Número</label>
               <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">+57</span>
-                <input type="number" class="form-control" id="id_numero" name="numero" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Proveer un numero válido
+                    <span class="input-group-text" id="inputGroupPrepend">+57</span>
+                    <input type="number" class="form-control" id="id_numero" name="numero" aria-describedby="inputGroupPrepend" required>
                 </div>
-              </div>
           </div>
           <div class="col-md-3">
             <label for="id_email" class="form-label">Correo</label>
             <input type="email" class="form-control" id="id_email" name="email" required>
-            <div class="invalid-feedback">
-                Proveer un correo válido
-            </div>
           </div>
         <div class="col-12">
           <div class="form-check">
@@ -80,9 +65,6 @@
             <label class="form-check-label" for="invalidCheck">
               Aceptar términos y condiciones
             </label>
-            <div class="invalid-feedback">
-              Debe aceptar términos y condiciones para continuar
-            </div>
           </div>
         </div>
         <div class="col-12">
