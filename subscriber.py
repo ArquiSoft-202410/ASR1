@@ -1,19 +1,26 @@
-import pika
-import json
+from BancoAlpes import settings
 from sys import path
 from os import environ
-import django
-import vonage
-from BancoAlpes import settings
 from random import randint
+import django
+import pika
+import vonage
+import json
 
 path.append('BancoAlpes/settings.py')
 environ.setdefault('DJANGO_SETTINGS_MODULE', 'BancoAlpes.settings')
 django.setup()
 
+rabbit_host = '10.128.0.2'
+rabbit_user = 'monitoring_user'
+rabbit_password = 'isis2503'
+exchange = 'ASR1_OTPs'
+topic = 'OTPs'
+
+### Funciones de Respuesta ###
 def callback(ch, method, properties, body):
     value = json.loads(body)
-    value['codigo'] = randint(100000, 999999)
+    value['codigo'] = randint(10000, 99999)
     print("Received %r" % value)
     #send_sms(value)
 
@@ -32,14 +39,7 @@ def send_sms(value):
     else:
         print(f"Error al enviar mensaje: {response_data['messages'][0]['error-text']}")
 
-# Configuración de RabbitMQ
-rabbit_host = '10.128.0.2'
-rabbit_user = 'monitoring_user'
-rabbit_password = 'isis2503'
-exchange = 'ASR1_OTPs'
-topic = 'OTPs'
-
-# Conecta a RabbitMQ
+### Conexión a RabbitMQ ###
 connection = pika.BlockingConnection(
     pika.ConnectionParameters(
         host=rabbit_host,
@@ -53,5 +53,6 @@ queue_name = result.method.queue
 channel.queue_bind(queue=queue_name, exchange=exchange, routing_key=topic)
 channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
 
+### Inicio de consumo ###
 print('Waiting for messages. To exit press CTRL+C')
 channel.start_consuming()
