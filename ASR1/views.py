@@ -10,6 +10,7 @@ def index(request):
             form_data = {
                 'nombre': form.cleaned_data['nombre'],
                 'email': form.cleaned_data['email'],
+                'numero': form.cleaned_data['numero']
             }
             payload = json.dumps(form_data)
             rabbit_host = '10.128.0.2'
@@ -21,6 +22,7 @@ def index(request):
             channel = connection.channel()
             channel.exchange_declare(exchange=exchange, exchange_type='topic')
             channel.basic_publish(exchange=exchange, routing_key=topic, body=payload)
+            print(form_data)
             connection.close()
             return render(request, "ASR1/check.html")
     else:
